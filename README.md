@@ -63,10 +63,6 @@ Reeling in is WHIP's ring skill check. Each rarity has its own ring in `Config.S
 
 Each fish in `shared/fish.lua` names the real species it stands for (`real`, `scientific`), shown on the catch card. If a photo exists at `html/img/photos/whip_fishing_<fish key>.webp` (for example `whip_fishing_bluegill.webp`), the card shows it as a small polaroid. No photos are bundled: the card falls back to the species name alone. Use only photos you have the right to ship (your own, public domain, or Creative Commons with the credit kept in a `CREDITS.md`), and add the photo files to the manifest's `files` list if you use another extension.
 
-## Treasure chests
-
-Now and then a strike turns out to be a **Sunken Chest** instead of a fish (`Config.Treasure.chance`, 3.5% by default). It plays a tougher ring and shows up as "Large" like any heavy catch. **Use** the chest from your pockets to pry it open: a progress bar, then one to three finds (rusty coin up to ancient relic, `shared/treasure.lua`). Sell the finds at any tackle shop with **Sell Fish & Treasure**. Prices are per find in `shared/treasure.lua`.
-
 ## Tackle shops and selling fish
 
 Three shops are set up in `Config.Shops` (Del Perro, Paleto Bay and the Alamo Sea). Each is a WHIP shop: an NPC with WHIP's own buy screen (basket, pay by card or cash) selling rods, bait and the repair kit. The shop keys are `whip_fishing_<id>`, so you can also edit them in the Director.
@@ -112,7 +108,7 @@ The build targets Chromium 103, FiveM's browser. Restart the resource after a bu
 
 ```
 fxmanifest.lua   config.lua   README.md
-shared/   rods, bait, fish, treasure, locations, utils (lookups and the config validator)
+shared/   rods, bait, fish, locations, utils (lookups and the config validator)
 server/   security (sessions, cooldowns, checks), inventory (items, rods, bait, fish), line (the whip_rope line),
           rewards (every roll), shops (tackle shops and selling fish), fishing (the state machine), main (registration, events)
 client/   ui, animations, props (water, line, effects), cutscene (the catch camera), shops (Sell Fish prompt),
